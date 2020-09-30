@@ -12,3 +12,6 @@ $literalVariable = '\nThis doesnt interpret the new line character';
 
 echo "\n\n This is the difference between double quotes and single quotes. Double quotes allows you to run an interpreter in there. \n $firstVariable and \n $literalVariable";
 
+
+echo "\n \n this is how you " . 'concatenate a string!';
+echo "\n \n this solves the issue of having an overloaded value because"

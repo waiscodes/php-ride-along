@@ -84,6 +84,7 @@ foreach ($players as $name => $surface) {
     echo "\n-hello my name is $name! And my favourite surface is $surface";
 }
 
+echo "\n\n\n";
 //Functions 
 
 function addition ($num1, $num2)
@@ -92,5 +93,8 @@ function addition ($num1, $num2)
 }
 
 echo addition(5, 19);
-
+echo "\n\n\n";
+echo addition("24", 5);
+echo "\n\n\n";
+echo addition("20tree" + 3);
 ?>

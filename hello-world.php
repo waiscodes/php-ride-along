@@ -93,8 +93,13 @@ function addition ($num1, $num2)
 }
 
 echo addition(5, 19);
+//regular answer
 echo "\n\n\n";
 echo addition("24", 5);
+//
 echo "\n\n\n";
 echo addition("20tree" + 3);
+
+
+
 ?>

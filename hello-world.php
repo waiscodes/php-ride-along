@@ -84,5 +84,13 @@ foreach ($players as $name => $surface) {
     echo "\n-hello my name is $name! And my favourite surface is $surface";
 }
 
+//Functions 
+
+function addition ($num1, $num2)
+{
+    return $num1 + $num2;
+}
+
+echo addition(5, 19);
 
 ?>

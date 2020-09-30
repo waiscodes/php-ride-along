@@ -71,4 +71,18 @@ for ( $i = 0; $i < 10; $i++ ) {
     echo "\n\n\n Our for loop is on iteration: $i";
 }
 
+$players = [
+    'Djokovic' => 'Hard Court',
+    'Nadal' => 'Clay',
+    'Federer' => 'Grass'
+];
+
+//for each lets us loop through a set of lists of values from array or object
+//NOTE: we grab an index/key, and the value by using fat arrow in our for each.
+// (Array as key => value)
+foreach ($players as $name => $surface) {
+    echo "\n-hello my name is $name! And my favourite surface is $surface";
+}
+
+
 ?>

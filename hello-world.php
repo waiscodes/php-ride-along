@@ -51,7 +51,24 @@ $array3 = array(
 //to output name
 echo $array3['name'];
 
+// Objects
 
+$object = new stdClass();
+$object->name = 'TECHCareers';
+$object->cohort = 4.2;
+$object->year = 2020;
 
+echo "\n\n\n $object->name $object->cohort $object->year" . "hello lol";
+
+//Null data types
+
+$nullVariable = NULL; //case insensitive but usually typed in all caps
+
+//When it says unexpected it usually means the error was before the red line
+//Loops
+
+for ( $i = 0; $i < 10; $i++ ) {
+    echo "\n\n\n Our for loop is on iteration: $i";
+}
 
 ?>

@@ -12,4 +12,5 @@
     <!-- ./ and just starting with the file stystem are the same -->
 </head>
 <body>
-    
+
+        <?php include './templates/nav.php' ?>

@@ -12,5 +12,5 @@
     <!-- ./ and just starting with the file stystem are the same -->
 </head>
 <body>
-
-        <?php include './templates/nav.php' ?>
+    <?php include dirname(__FILE__).'/nav.php' ?>
+<!-- dirname is a function that finds the absolute path regardless. It's safer and future proof so possibly make a practice of using this more. -->

@@ -35,6 +35,44 @@ $GLOBALS['pageTitle'] = 'Calculator';
   <input type="submit" value="Calculate">
 </form>
 
+<?php 
+  var_dump($_GET);
+  // This is basically a console.log but it shows up on the page. 
+  // $_GET is a super global element. $_POST is the same thing. These are predefined variables. 
+
+  echo '<pre>';
+    var_dump($_GET);
+  echo '</pre>';
+
+  $result = FALSE;
+  if ( !empty($_GET)) //empty is a function that checks if something is empty. Not just no value but also empty space. 
+  {
+    switch($_GET['operator'])
+    {
+      case 'add':
+        $result = $_GET['value1'] + $_GET['value2'];
+      break;
+      case 'subtract':
+        $result = $_GET['value1'] - $_GET['value2'];
+      break;
+      case 'multiply':
+        $result = $_GET['value1'] * $_GET['value2'];
+      break;
+      case 'divide':
+        $result = $_GET['value1'] / $_GET['value2'];
+      break;
+    }
+  }
+
+  // var_dump($result);
+?>
+
+<?php if ($result != FALSE ) : ?>
+  <p>
+    Your result for your canculation is: 
+    <?php echo $result ?>
+  </p>
+<?php endif ?>
 <!-- 
   The url for the get method http://localhost:3000/calc.php?value1=3&operator=add&value2=4 
   You can read it in kvp. Name is the key and value is the value.

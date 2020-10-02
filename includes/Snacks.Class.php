@@ -52,14 +52,14 @@ class Snack
   }
 }
 
-// Initialized a snack object, pass arguments to __construct
-$mySnack = new Snack('Oreo','chocolate', 1.8843, '200');
-var_dump($mySnack);
+// // Initialized a snack object, pass arguments to __construct
+// $mySnack = new Snack('Oreo','chocolate', 1.8843, '200');
+// var_dump($mySnack);
 
-// Run a method from the object.
-$mySnack->caramelize();
-var_dump($mySnack);
+// // Run a method from the object.
+// $mySnack->caramelize();
+// var_dump($mySnack);
 
-$mySnack->output();
+// $mySnack->output();
 
 ?>

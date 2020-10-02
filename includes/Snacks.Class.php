@@ -20,9 +20,13 @@ class Snack
   {
     $this->name = $name;
     $this->type = $type;
+    // for more verbose currency formatting, there's a currency fomatting function.
     $this->price = $price;
     $this->calories = $calories;
   }
 }
+
+$mySnack = new Snack('Oreo');
+var_dump($mySnack);
 
 ?>

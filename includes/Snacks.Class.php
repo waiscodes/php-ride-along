@@ -21,12 +21,45 @@ class Snack
     $this->name = $name;
     $this->type = $type;
     // for more verbose currency formatting, there's a currency fomatting function.
-    $this->price = $price;
-    $this->calories = $calories;
+    $this->price = number_format(
+      $price, // Number to format 
+      2, // Number of decimal places
+      '.', // decimal seperator
+      ',' // Thousand seperator
+    );
+    $this->calories = ((integer) $calories); // This does type conversion to the value directly next to the right of it. intVal() does the same thing. Similar intParse()
+  }
+
+  public function caramelize()
+  { //This function just multiplies the properties to methods.
+    $this->calories *=2;
+  }
+
+  public function output()
+  { // Closing the main tag here. It doesn't effect it though, since it's inside the function block.
+    ?> 
+      <dl>
+        <dt>Snack Name: </dt>
+        <dd><?php echo $this->name; ?></dd>
+        <dt>Snack Type: </dt>
+        <dd><?php echo $this->type; ?></dd>
+        <dt>Snack Price: </dt>
+        <dd><?php echo $this->price; ?></dd>
+        <dt>Snack Calories: </dt>
+        <dd><?php echo $this->calories; ?></dd>
+      </dl>
+    <?php
   }
 }
 
-$mySnack = new Snack('Oreo');
+// Initialized a snack object, pass arguments to __construct
+$mySnack = new Snack('Oreo','chocolate', 1.8843, '200');
 var_dump($mySnack);
+
+// Run a method from the object.
+$mySnack->caramelize();
+var_dump($mySnack);
+
+$mySnack->output();
 
 ?>

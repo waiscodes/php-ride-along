@@ -1,4 +1,14 @@
 <?php
+//Seession is basically cookies. A temporary storage that survives multiple page loads.
+//It sets up Uid in the browser in an assosiative array format for just that user. 
+session_start();
+
+//Make sure to set default value if the key value pair does not yet exist in the associative session array. We can't array_push() to a NULL/undefined value.
+
+if (!isset($_SESSION['calcHistory'])) 
+{
+  $_SESSION['calcHistory'] = array();
+}
 
 $GLOBALS['pageTitle'] = 'Calculator';
 
@@ -50,20 +60,31 @@ $GLOBALS['pageTitle'] = 'Calculator';
     switch($_GET['operator'])
     {
       case 'add':
+        $opSymbol = '+';
         $result = $_GET['value1'] + $_GET['value2'];
       break;
       case 'subtract':
+        $opSymbol = '-';
         $result = $_GET['value1'] - $_GET['value2'];
       break;
       case 'multiply':
+        $opSymbol = '&times;';
         $result = $_GET['value1'] * $_GET['value2'];
       break;
       case 'divide':
+        $opSymbol = '&divide;';
         $result = $_GET['value1'] / $_GET['value2'];
       break;
     }
+    array_push(
+      $_SESSION['calcHistory'],
+      "{$_GET['value1']} {$opSymbol} {$_GET['value2']} = {$result} " 
+    );
   }
-
+  echo '<pre>';
+  var_dump($_SESSION);
+  var_dump($result);
+  echo '</pre>'
   // var_dump($result);
 ?>
 
@@ -77,6 +98,8 @@ $GLOBALS['pageTitle'] = 'Calculator';
   The url for the get method http://localhost:3000/calc.php?value1=3&operator=add&value2=4 
   You can read it in kvp. Name is the key and value is the value.
  -->
+
+
 
 <?php 
     //Footer

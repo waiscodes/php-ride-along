@@ -16,7 +16,7 @@ class Snack
    * 
    * 
   */
-  function __construct($name, $type, $price, $calories)
+  function __construct($name = '', $type = '', $price = 0.00, $calories = 0)
   {
     $this->name = $name;
     $this->type = $type;

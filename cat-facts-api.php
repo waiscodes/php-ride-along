@@ -30,8 +30,10 @@
 
 <?php
   $factsListResponse = file_get_contents(
-    'https://cat-fact.herokuapp.com/facts/random?amount=10&animal_type=dog'
+    "https://cat-fact.herokuapp.com/facts/random?amount={$_POST['amount']}&animal_type={$_POST['type']}"
   );
+
+  var_dump($factsListResponse);
 ?>
 
 <?php include './templates/footer.php' ?>

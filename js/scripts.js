@@ -5,6 +5,8 @@ const searchResults = document.querySelector("#search-results");
 snackSearchForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  searchResults.innerHTML = "";
+
   const results = false;
   fetch(`http://localhost:3000/api/snacks.php?search=${snackSearchInput.value}`)
     .then((response) => response.json())
@@ -24,4 +26,5 @@ snackSearchForm.addEventListener("submit", (e) => {
         searchResults.append(snackLI);
       }
     });
+  snackSearchInput.value = "";
 });

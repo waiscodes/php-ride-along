@@ -13,9 +13,24 @@ if (isset($_GET['search']) && !empty($_GET['search']))
   // Now let's retrieve the data
   $snacksJSONString = file_get_contents('../data/snacks.json');
   // echo $snacksJSONString;
-  if ($snacksJSONString)
-  {
-
+  if ($snacksJSONString != FALSE)
+  { //Decode to manipulate so we can give it back to them in JSON format
+    $snacksList = json_decode($snacksJSONString);
+    if ($snacksList != NULL)
+    {
+      $matchingSnacks = array();
+      foreach ($snacksList as $snack)
+      {
+        if (stristr($snack[0], $_GET['search'] ))
+        {
+          array_push($matchingSnacks, $snack);
+        }
+      }
+      echo json_encode($matchingSnacks);
+    }
+    else {
+      "{\"response\":\"ERROR: Unable to convert Snacks list from JSON.\"}";
+    }
   }
   else
   {

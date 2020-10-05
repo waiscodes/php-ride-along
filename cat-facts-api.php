@@ -19,4 +19,19 @@
   }
 ?>
 
+<h2>Request Animal Facts</h2>
+<form action="#" method="POST">
+  <label for="amount">Enter the Amount of Facts: </label>
+  <input type="number" id="amount" name="amount">
+  <label for="animal-type">Enter the Type of Animal: </label>
+  <input type="text" id="animal-type" name="type">
+  <input type="submit" value="Get Animal Fact!">
+</form>
+
+<?php
+  $factsListResponse = file_get_contents(
+    'https://cat-fact.herokuapp.com/facts/random?amount=10&animal_type=dog'
+  );
+?>
+
 <?php include './templates/footer.php' ?>

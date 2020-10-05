@@ -13,5 +13,8 @@
     <li>
       <a href="cat-facts-api.php">Cats Facts (external API)</a>
     </li>
+    <li>
+      <a href="snack-search.html">Snack Search (AJAX and API)</a>
+    </li>
   </ul>
 </nav>

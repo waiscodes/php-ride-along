@@ -29,11 +29,31 @@
 </form>
 
 <?php
+if (isset($_POST['amount']) && isset($_POST['type']))
+{
   $factsListResponse = file_get_contents(
     "https://cat-fact.herokuapp.com/facts/random?amount={$_POST['amount']}&animal_type={$_POST['type']}"
   );
 
-  var_dump($factsListResponse);
+  if ($factsListResponse)
+  {
+    $factsList = json_decode($factsListResponse);
+    ?>
+      <h2>
+        List of
+        <?php echo ucfirst($_POST['type']); ?>
+        Facts
+      </h2>
+      <ol>
+        <?php foreach ($factsList as $fact) : ?>
+          <li>
+            <?php echo $fact->text; ?>
+          </li>
+        <?php endforeach ?>
+      </ol>
+    <?php
+  }
+}
 ?>
 
 <?php include './templates/footer.php' ?>

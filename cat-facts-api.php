@@ -49,6 +49,7 @@ if (isset($_POST['amount']) && isset($_POST['type']))
         <?php echo ucfirst($_POST['type']); ?>
         Facts
       </h2>
+      <?php if (!empty($factsList)) : ?>
       <ol>
         <?php foreach ($factsList as $fact) : ?>
           <li>
@@ -56,6 +57,9 @@ if (isset($_POST['amount']) && isset($_POST['type']))
           </li>
         <?php endforeach ?>
       </ol>
+      <? else : ?> 
+      <p>No Facts Found</p>
+      <?php endif ?>
     <?php
   }
 }

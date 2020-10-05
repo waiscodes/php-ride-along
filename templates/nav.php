@@ -10,5 +10,8 @@
     <li>
       <a href="snacks.php">Snacks! OOP</a>
     </li>
+    <li>
+      <a href="cat-facts-api.php">Cats Facts (external API)</a>
+    </li>
   </ul>
 </nav>

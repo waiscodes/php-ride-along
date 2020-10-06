@@ -3,9 +3,12 @@ const reactRoot = document.querySelector("#react-root");
 const SearchForm = (props) => {
   const [search, setSearch] = React.useState("");
 
+  const submitSearch = (e) => {
+    e.preventDefault();
+  };
   return (
     <React.Fragment>
-      <form>
+      <form onSubmit={submitSearch}>
         <label htmlFor="search">Search Snacks: </label>
         <input
           type="search"
@@ -19,7 +22,7 @@ const SearchForm = (props) => {
         <input type="submit" value="Search Snack" />
       </form>
       <h3>Snack Search Results</h3>
-      <ul>{search}</ul>
+      <ul></ul>
     </React.Fragment>
   );
 };
